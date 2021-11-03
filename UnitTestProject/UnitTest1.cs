@@ -46,7 +46,7 @@ namespace UnitTestProject
 
         bool compare(Vector4 a, Vector4 b, float tolerance = DEFAULT_TOLERANCE)
         {
-            if (Math.Abs(a.X - b.X  ) > tolerance ||
+            if (Math.Abs(a.X - b.X) > tolerance ||
                 Math.Abs(a.Y - b.Y) > tolerance ||
                 Math.Abs(a.Z - b.Z) > tolerance ||
                 Math.Abs(a.W - b.W) > tolerance)
@@ -232,7 +232,7 @@ namespace UnitTestProject
             m4a = Matrix4.CreateRotationX(4.5f);
 
             Assert.IsTrue(compare(m4a,
-                new Matrix4(1, 0, 0, 0, 0, -0.210796f, -0.97753f, 0, 0, 0.97753f, -0.210796f, 0, 0, 0, 0, 1)));
+                new Matrix4(1, 0, 0, 0, 0, -0.210796f, 0.97753f, 0, 0, -0.97753f, -0.210796f, 0, 0, 0, 0, 1)));
         }
 
         [TestMethod]
@@ -308,7 +308,7 @@ namespace UnitTestProject
         public void Matrix3Multiply()
         {
             Matrix3 m3b = Matrix3.Identity;
-            m3b = Matrix3.CreateTranslation(new Vector2(2,3));
+            m3b = Matrix3.CreateTranslation(new Vector2(2, 3));
 
             Matrix3 m3c = Matrix3.Identity;
             m3c = Matrix3.CreateTranslation(new Vector2(3, 15));
@@ -331,7 +331,7 @@ namespace UnitTestProject
             Matrix4 m4d = Transpose(m4c * m4b);
 
             Assert.IsTrue(compare(m4d,
-                new Matrix4(-0.644213855267f, 0.56501925f, -0.51550144f, 0, 0.659384668f, 0.7518057f, 0, 0, 0.38755694f, -0.339913756f, -0.8568887f, 0, 0,  0,  0,  1)));
+                new Matrix4(-0.644213855267f, 0.56501925f, -0.51550144f, 0, 0.659384668f, 0.7518057f, 0, 0, 0.38755694f, -0.339913756f, -0.8568887f, 0, 0, 0, 0, 1)));
         }       //               M00           M10              M20     M30     M01           M11    M21 M31    M02         M12            M22      M32 M03 M13 M23 M33 
 
         [TestMethod]
@@ -358,7 +358,7 @@ namespace UnitTestProject
                                       0, 1, 0, 0,
                                       0, 0, 1, 0,
                                       55, 44, 99, 1));
-            
+
             Vector4 v4a = new Vector4(13.5f, -48.23f, -54, 1);
 
             Vector4 v4c = m4b * v4a;
@@ -378,7 +378,7 @@ namespace UnitTestProject
             Vector4 v4c = m4c * v4a;
             Assert.IsTrue(compare(v4c, new Vector4(8.061456f, 61.468708f, 45, 1)));
         }
-        
+
         [TestMethod]
         public void Vector3MatrixTranslation3()
         {
@@ -423,6 +423,6 @@ namespace UnitTestProject
             Assert.IsTrue(compare(v4c, new Vector4(-46.9385452f, 17.46871f, -54, 0)));
         }
 
-        
+
     }
 }
