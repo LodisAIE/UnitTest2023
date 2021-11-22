@@ -1,6 +1,5 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MathLibrary;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 namespace UnitTestProject
 {
     [TestClass]
